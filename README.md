@@ -10,8 +10,14 @@ Author: Shreyas Padhye
 Machine should have Docker installed in it
 
 # Run
+1. `docker-compose build`
+2. `docker-compose up` 
+
+or alternatively: `docker-compose up --build`
 
 # Test
 
 # Deploy
+
+# Steps of Development
 
