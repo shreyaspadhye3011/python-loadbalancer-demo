@@ -19,3 +19,5 @@ or alternatively: `docker-compose up --build`
 
 # Deploy
 
+# Steps of Development
+
