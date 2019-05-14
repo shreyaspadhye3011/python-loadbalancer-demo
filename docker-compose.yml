@@ -6,7 +6,7 @@ services:
     build:
       context: ./flask
       dockerfile: Dockerfile1
-    container_name: flask
+    container_name: flask1
     environment:
       - APP_NAME=FlaskApp1
     expose:
