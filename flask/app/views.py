@@ -9,6 +9,6 @@ def index():
     app_name = os.getenv("APP_NAME")
 
     if app_name:
-        return "Hello from {} running in a Docker container behind Nginx!".format(app_name)
+        return "Docker App: {}".format(app_name)
 
-    return "Hello from Flask"
+    return "Flask: Hello"

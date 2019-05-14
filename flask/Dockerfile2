@@ -11,4 +11,4 @@ ADD . /app
 RUN pip install -r requirements.txt
 
 # run the command to start uWSGI
-CMD ["uwsgi", "app.ini"]
+CMD ["uwsgi", "app2.ini"]
