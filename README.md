@@ -15,6 +15,8 @@ Machine should have Docker installed in it
 
 or alternatively: `docker-compose up --build`
 
+To stop services: Press `Ctrl + Z` and RUN `docker-compose stop`
+
 # Test
 
 # Deploy

@@ -2,14 +2,37 @@ version: "3.7"
 
 services:
 
-  flask:
-    build: ./flask
-    container_name: flask
-    restart: always
+  flask1:
+    build:
+      context: ./flask
+      dockerfile: Dockerfile1
+    container_name: flask1
     environment:
-      - APP_NAME=FlaskLoadBalancer
+      - APP_NAME=FlaskApp1
     expose:
       - 8080
+
+  flask2:
+    build:
+      context: ./flask
+      dockerfile: Dockerfile2
+    container_name: flask2
+    restart: always
+    environment:
+      - APP_NAME=FlaskApp2
+    expose:
+      - 8000
+  
+  flask3:
+    build:
+      context: ./flask
+      dockerfile: Dockerfile3
+    container_name: flask3
+    restart: always
+    environment:
+      - APP_NAME=FlaskApp3
+    expose:
+      - 9090
 
   nginx:
     build: ./nginx
