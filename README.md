@@ -24,10 +24,10 @@ One-time setup:
     Note: sample commands specifically for mac & linux systems 
 2. Mount containers: Open root project directory  
         run `docker-compose up --build`
-3. SSH in docker container: Open a separate terminal in root project directory  
+3. SSH in mongo's docker container: Open a separate terminal in root project directory  
         run `docker exec -it mongo /bin/bash` 
 4. Here, create database using dunp:
-        In the docker container terminal access created in step 3,  
+        In the docker container terminal from step 3,  
         run `mongorestore --db myusers dump/myusers -u <username> -p <password> --authenticationDatabase admin`
 5. run `exit` to exit shell
 
