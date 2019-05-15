@@ -1,5 +1,5 @@
 # About
-#####Welcome to the world of Load Balancer!
+##### Welcome to the world of Load Balancer!
 
 This is a simple web server which demos the use of <b>Flask</b> along with a <b>load balancer</b>. The environment is virtually created using <b>Docker</b>.
 
@@ -18,7 +18,7 @@ If you pass `user_id` as a query paramter in the `GET` request to `/`, the serve
 Machine should have Docker installed in it.
 
 ---
-#### Deploy & Run
+# Deploy & Run
 One-time setup:
 > 1. Set mongo db credentials that you would want in two separate environment variables using following commands (where `<username>` and `<password>` are values that you want to set):  
     a. `export mongo_user= <username>`  
@@ -50,7 +50,7 @@ On Browser:
 Additionally, you can use a REST API client like Postman to `GET` request `http://localhost/` with the `user_id` query param
 
 ---
-#### Steps of Development
+# Steps of Development
 > 1. Carefully went over the requirement and understood different aspects of the assignment. 
 > 2. Created virtual environment for flask app along with its folder structure and created requirements.txt file so that it can be served through uWSGI
 > 3. Created wsgi config & basic flask routing at '/' and tested working through `flask run`
