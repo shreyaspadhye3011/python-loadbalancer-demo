@@ -5,6 +5,8 @@ This is a simple web server which demos the use of Flask along with a load balan
 
 The app runs at http://localhost/ Also the mongo-express is available at http://localhost:8081
 
+If you pass `user_id` as a query paramter in the GET request to `/`, the server responds with the associated `user_key` which it fetches from a mongodb database along with the port number of the service responding, otherwise it simply shows which Flask app is serving your request.
+
 Author: Shreyas Padhye
 
 # Pre-Requisite:
