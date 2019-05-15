@@ -9,6 +9,6 @@ def index():
     app_name = os.getenv("APP_NAME")
 
     if app_name:
-        return "Docker App: {}".format(app_name)
+        return "Docker App Currently Serving: {}".format(app_name)
 
     return "Flask: Hello"
