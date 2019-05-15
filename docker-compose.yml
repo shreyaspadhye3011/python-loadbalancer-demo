@@ -10,6 +10,8 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: "${mongo_user}"
       MONGO_INITDB_ROOT_PASSWORD: "${mongo_pass}"
+    ports:
+      - 27017:27017
 
   mongo-express:
     image: mongo-express
@@ -28,6 +30,7 @@ services:
     container_name: flask1
     environment:
       - APP_NAME=FlaskApp1
+      - FLASK_PORT=8080
     expose:
       - 8080
 
@@ -39,6 +42,7 @@ services:
     restart: always
     environment:
       - APP_NAME=FlaskApp2
+      - FLASK_PORT=8000
     expose:
       - 8000
   
@@ -50,6 +54,7 @@ services:
     restart: always
     environment:
       - APP_NAME=FlaskApp3
+      - FLASK_PORT=9090
     expose:
       - 9090
 
