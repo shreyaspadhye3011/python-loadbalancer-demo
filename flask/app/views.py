@@ -1,14 +1,19 @@
 
-from app import app
+from app import app, mongo
+from flask import request
 import os
 
 @app.route("/")
 def index():
-
-    # Use os.getenv("key") to get environment variables
     app_name = os.getenv("APP_NAME")
-
+    port = os.getenv("FLASK_PORT")
     if app_name:
-        return "Docker App Currently Serving: {}".format(app_name)
-
+        if request.args and ('user_id' in request.args):
+            user_id = request.args.get('user_id')
+            user_key = None
+            user_key_cursor = mongo.db.data.find({"user_id": user_id})
+            for item in user_key_cursor:
+                user_key = item['user_key']
+            return "user_key: {}, port: {}".format(user_key, port)
+        return "Currently Serving: {} from port: {}".format(app_name, port)
     return "Flask: Hello"
