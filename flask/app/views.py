@@ -10,10 +10,12 @@ def index():
     if app_name:
         if request.args and ('user_id' in request.args):
             user_id = request.args.get('user_id')
-            # TODO: plug in code to fetch key value from mongodb
-            test_user = mongo.db.data.find({"user_id": 1})
-            print("*********")
-            print(type(test_user))
-            return "user_id: {}, port: {}".format(user_id, port)
+            user_key = None
+            user_key_cursor = mongo.db.data.find({"user_id": user_id})
+            print("######", user_key_cursor.count())
+            # TODO: plug in code to test whether anything was found
+            for item in user_key_cursor:
+                user_key = item['user_key']
+            return "user_key: {}, port: {}".format(user_key, port)
         return "Currently Serving: {} from port: {}".format(app_name, port)
     return "Flask: Hello"
