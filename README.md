@@ -50,6 +50,12 @@ On Browser:
 Additionally, you can use a REST API client like Postman to `GET` request `http://localhost/` with the `user_id` query param
 
 ---
+#### Other useful commands
+> - `docker-compose ps`
+> - `mongodump --db myusers -u <username> -p <password> --authenticationDatabase admin`
+
+---
+
 # Steps of Development
 > 1. Carefully went over the requirement and understood different aspects of the assignment. 
 > 2. Created virtual environment for flask app along with its folder structure and created requirements.txt file so that it can be served through uWSGI
@@ -61,11 +67,7 @@ Additionally, you can use a REST API client like Postman to `GET` request `http:
 > 8. Implemented query params handling to query mongodb and fetch appropraite key
 
 ---
-#### Other useful commands
-> - `docker-compose ps`
-> - `mongodump --db myusers -u <username> -p <password> --authenticationDatabase admin`
 
----
 #### TODOs / Future Improvements: 
 ```
  - mongo: add database not found check
