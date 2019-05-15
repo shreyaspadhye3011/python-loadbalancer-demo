@@ -18,7 +18,7 @@ One-time setup:
         run `docker exec -it mongo /bin/bash` 
 4. Here, create database using dunp:
         In the docker container terminal access created in step 3,
-        run `mongorestore --db myusers  dump/myusers -u <username> -p <password> --authenticationDatabase admin`
+        run `mongorestore --db myusers dump/myusers -u <username> -p <password> --authenticationDatabase admin`
 5. run `exit` to exit shell
 
 For every time you want to run / restart containers:
@@ -27,13 +27,14 @@ For every time you want to run / restart containers:
 3. `docker-compose up` 
 or alternatively: `docker-compose up --build`
 
-To stop services: Press `Ctrl + Z` and RUN `docker-compose stop`
+To stop running services: Press `Ctrl + Z` and RUN `docker-compose stop`
 
 # Test
-
-# Deploy
+(yet to be added)
 
 # Steps of Development
+(yet to be added)
+
 
 # Other useful commands
 - docker-compose ps
