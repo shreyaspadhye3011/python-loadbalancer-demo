@@ -43,7 +43,7 @@ To stop running services: Press `Ctrl + Z` and RUN `docker-compose stop`
 - docker-compose ps
 - mongodump --db myusers -u <username> -p <password> --authenticationDatabase admin
 
-#TODOs / Future Improvements: 
+# TODOs / Future Improvements: 
 - Change Dockerfile code to use ENV variable to set .ini file & implement through single docker file
 - Explore if it can be done through single app.ini file
 - Can add checks for DDoS and block IPs
