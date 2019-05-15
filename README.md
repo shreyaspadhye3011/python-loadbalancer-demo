@@ -35,12 +35,23 @@ or alternatively: `docker-compose up --build`
 To stop running services: Press `Ctrl + Z` and RUN `docker-compose stop`
 
 # Test
+On Browser:
 - To test load balancer working, you can keep reloading the home page at http://localhost/ and you'll see the page being served from a different flask server everytime.
-(yet to be added)
+- To test `user_key` retrieval, pass in the `user_id` as a query parameter to '/' route eg `http://localhost/?user_id=1` will return `one@5cdb5896d7c8` as the key. The response will also contain the port of the flask server that is responding.
+- If the request does not contain the `user_id` param, it will fallback to a standard response showing only info about which Flask app is serving and on which port
+- user_id from 1 to 7 are available in database and more can be added through mongo-express
+
+Additionally, you can use a REST API client like Postman to GET request http://localhost/ with the user_id query param
 
 # Steps of Development
-(yet to be added)
-
+1. Carefully went over the requirement and understood different aspects of the assignment. 
+2. Created virtual environment for flask app along with its folder structure and created requirements.txt file so that it can be served through uWSGI
+3. Created wsgi config & basic flask routing at '/' and tested working through `flask run`
+4. Dockerized flask and nginx
+5. Added code to spin off 3 flask servers via docker containers
+6. Added load balancer code to share load among the three flask servers
+7. Added mongo integration and included dump restore functionality in Readme to ease deployment
+8. Implemented query params handling to query mongodb and fetch appropraite key
 
 # Other useful commands
 - `docker-compose ps`
