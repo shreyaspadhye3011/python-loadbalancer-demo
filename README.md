@@ -12,7 +12,7 @@ Machine should have Docker installed in it.
 
 # Deploy & Run
 One-time setup:
-1. Set mongo db credentials that you would want in two separate environment variables using following commands:  
+1. Set mongo db credentials that you would want in two separate environment variables using following commands (where `<username>` and `<password>` are values that you want to set):  
     a. `export mongo_user= <username>`  
     b. `export mongo_pass= <password>`
 2. Mount containers: Open root project directory  
@@ -41,10 +41,12 @@ To stop running services: Press `Ctrl + Z` and RUN `docker-compose stop`
 
 
 # Other useful commands
-- docker-compose ps
-- mongodump --db myusers -u <username> -p <password> --authenticationDatabase admin
+- `docker-compose ps`
+- `mongodump --db myusers -u <username> -p <password> --authenticationDatabase admin`
 
 # TODOs / Future Improvements: 
+- mongo: add database not found check
+- flask: handle route_not_found default mapping
 - Change Dockerfile code to use ENV variable to set .ini file & implement through single docker file
 - Explore if it can be done through single app.ini file
 - Can add checks for DDoS and block IPs
