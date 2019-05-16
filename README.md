@@ -29,10 +29,12 @@ One-time setup:
 4. Here, create database using dunp:
         In the docker container terminal from step 3,  
         run `mongorestore --db admin dump/myusers -u <username> -p <password> --authenticationDatabase admin`
-5. Add role and authentication to `myusers` table:  
-> run `mongo -u <username> -p <password> --authenticationDatabase admin` to enter mongo shell
-> run `use myusers` to switch to myusers database
-> run `db.createUser({ user: <username>, pwd: <password>, roles: [{ role: "readWrite", db: "myusers" }] }`
+5. Run following commands to create role and authentication for `myusers` table:  
+```
+. `mongo -u <username> -p <password> --authenticationDatabase admin` to enter mongo shell  
+. `use myusers` to switch to myusers database  
+. `db.createUser({ user: <username>, pwd: <password>, roles: [{ role: "readWrite", db: "myusers" }] }`  
+```
 Note: use same username that you created in ENV variables
 6. run `exit` to exit shell
 
