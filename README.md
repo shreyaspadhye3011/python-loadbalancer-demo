@@ -35,8 +35,8 @@ One-time setup:
 . use myusers  
 . db.createUser({ user: "<username>", pwd: "<password>", roles: [{ role: "readWrite", db: "myusers" }] }) 
 ```
-**Note:** use same username-password that you created in ENV variables
-6. run `exit` to exit docker container shell
+**Note:** use same username-password that you created in ENV variables  
+6. run `exit` to exit docker container shell  
 7. Proceed with testing (refer to Test section)
 
 ---
