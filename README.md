@@ -81,7 +81,6 @@ Additionally, you can use a REST API client like Postman to `GET` request `http:
 
 #### TODOs / Future Improvements: 
 ```
- - Send response in JSON with status codes
  - Handle server side exceptions eg when Internal Server Error happens due to authentication failed
  - Change Dockerfile code to use ENV variable to set .ini file & implement through single docker file
  - Explore if it can be done through single app.ini file
