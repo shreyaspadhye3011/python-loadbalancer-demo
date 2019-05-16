@@ -54,7 +54,7 @@ To stop running services: Press `Ctrl + Z` and RUN `docker-compose stop`
 On Browser:
 - To test load balancer working, you can keep reloading the home page at http://localhost/ and you'll see the page being served from a different flask server everytime.
 - To test `user_key` retrieval, pass in the `user_id` as a query parameter to '/' route eg `http://localhost/?user_id=1` will return `one@5cdb5896d7c8` as the key. The response will also contain the port of the flask server that is responding.
-- If the request does not contain the `user_id` param, it will fallback to a standard response showing only info about which Flask app is serving and on which port
+- If the request does not contain the `user_id` param, it will return None
 - user_id from 1 to 7 are available in database and more can be added through mongo-express
 
 Additionally, you can use a REST API client like Postman to `GET` request `http://localhost/` with the `user_id` query param
