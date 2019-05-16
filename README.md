@@ -18,9 +18,9 @@ Machine should have Docker installed in it.
 ---
 # Deploy & Run
 One-time setup:
-1. Set mongo db credentials that you would want in two separate environment variables using following commands (where `<username>` and `<password>` are values that you want to set):  
-    a. `export mongo_user=<username>`  
-    b. `export mongo_pass=<password>`
+1. Set mongo db credentials that you would want in two separate environment variables using following commands (where `username` and `password` are values that you want to set):  
+    a. `export mongo_user=username`  
+    b. `export mongo_pass=password`
     Note: sample commands specifically for mac & linux systems 
 2. Mount containers: Open root project directory  
         run `docker-compose up --build`
@@ -28,12 +28,12 @@ One-time setup:
         run `docker exec -it mongo /bin/bash` 
 4. Here, create database using dunp:
         In the docker container terminal from step 3,  
-        run `mongorestore --db admin dump/myusers -u <username> -p <password> --authenticationDatabase admin`
+        run `mongorestore --db admin dump/myusers -u username -p password --authenticationDatabase admin`
 5. Run following commands to create role and authentication for `myusers` table:  
 ```
-. mongo -u <username> -p <password> --authenticationDatabase admin
+. mongo -u username -p password --authenticationDatabase admin
 . use myusers  
-. db.createUser({ user: "<username>", pwd: "<password>", roles: [{ role: "readWrite", db: "myusers" }] }) 
+. db.createUser({ user: "username", pwd: "password", roles: [{ role: "readWrite", db: "myusers" }] }) 
 ```
 **Note:** use same username-password that you created in ENV variables  
 
@@ -63,7 +63,7 @@ Additionally, you can use a REST API client like Postman to `GET` request `http:
 ---
 #### Other useful commands
 > - `docker-compose ps`
-> - `mongodump --db myusers -u <username> -p <password> --authenticationDatabase admin`
+> - `mongodump --db myusers -u username -p password --authenticationDatabase admin`
 
 ---
 
