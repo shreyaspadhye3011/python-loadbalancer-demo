@@ -28,7 +28,7 @@ One-time setup:
         run `docker exec -it mongo /bin/bash` 
 4. Here, create database using dunp:
         In the docker container terminal from step 3,  
-        run `mongorestore --db myusers dump/myusers -u <username> -p <password> --authenticationDatabase admin`
+        run `mongorestore --db admin dump/myusers -u <username> -p <password> --authenticationDatabase admin`
 5. run `exit` to exit shell
 
 For every time you want to run / restart containers:

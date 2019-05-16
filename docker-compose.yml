@@ -31,6 +31,8 @@ services:
     environment:
       - APP_NAME=FlaskApp1
       - FLASK_PORT=8080
+      - MONGO_USER="${mongo_user}"
+      - MONGO_PASS="${mongo_pass}"
     expose:
       - 8080
 
@@ -43,6 +45,8 @@ services:
     environment:
       - APP_NAME=FlaskApp2
       - FLASK_PORT=8000
+      - MONGO_USER="${mongo_user}"
+      - MONGO_PASS="${mongo_pass}"
     expose:
       - 8000
   
@@ -55,6 +59,8 @@ services:
     environment:
       - APP_NAME=FlaskApp3
       - FLASK_PORT=9090
+      - MONGO_USER="${mongo_user}"
+      - MONGO_PASS="${mongo_pass}"
     expose:
       - 9090
 
