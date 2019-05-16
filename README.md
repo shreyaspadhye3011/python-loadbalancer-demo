@@ -31,12 +31,12 @@ One-time setup:
         run `mongorestore --db admin dump/myusers -u <username> -p <password> --authenticationDatabase admin`
 5. Run following commands to create role and authentication for `myusers` table:  
 ```
-. `mongo -u <username> -p <password> --authenticationDatabase admin` to enter mongo shell  
-. `use myusers` to switch to myusers database  
-. `db.createUser({ user: <username>, pwd: <password>, roles: [{ role: "readWrite", db: "myusers" }] }`  
+. mongo -u <username> -p <password> --authenticationDatabase admin
+. use myusers  
+. db.createUser({ user: <username>, pwd: <password>, roles: [{ role: "readWrite", db: "myusers" }] }  
 ```
 Note: use same username that you created in ENV variables
-6. run `exit` to exit shell
+6. run `exit` to exit docker container shell
 
 For every time you want to run / restart containers:
 1. Open terminal in project's root directory and run following commands 
@@ -60,10 +60,6 @@ Additionally, you can use a REST API client like Postman to `GET` request `http:
 #### Other useful commands
 > - `docker-compose ps`
 > - `mongodump --db myusers -u <username> -p <password> --authenticationDatabase admin`
-```
-use myusers
-db.createUser({ user: <username>, pwd: <password>, roles: [{ role: "readWrite", db: "myusers" }] })
-```
 
 ---
 
