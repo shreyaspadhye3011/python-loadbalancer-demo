@@ -33,10 +33,11 @@ One-time setup:
 ```
 . mongo -u <username> -p <password> --authenticationDatabase admin
 . use myusers  
-. db.createUser({ user: <username>, pwd: <password>, roles: [{ role: "readWrite", db: "myusers" }] }  
+. db.createUser({ user: "<username>", pwd: "<password>", roles: [{ role: "readWrite", db: "myusers" }] }) 
 ```
 **Note:** use same username-password that you created in ENV variables
 6. run `exit` to exit docker container shell
+7. Proceed with testing (refer to Test section)
 
 ---
 For every time you want to run / restart containers:
@@ -78,6 +79,8 @@ Additionally, you can use a REST API client like Postman to `GET` request `http:
 
 #### TODOs / Future Improvements: 
 ```
+ - Send response in JSON with status codes
+ - Handle server side exceptions eg when Internal Server Error happens due to authentication failed
  - Change Dockerfile code to use ENV variable to set .ini file & implement through single docker file
  - Explore if it can be done through single app.ini file
  - Can add checks for DDoS and block IPs
