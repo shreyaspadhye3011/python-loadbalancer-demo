@@ -20,7 +20,7 @@ Machine should have Docker installed in it.
 One-time setup:
 1. Set mongo db credentials that you would want in two separate environment variables using following commands (where `username` and `password` are values that you want to set):  
     a. `export mongo_user=username`  
-    b. `export mongo_pass=password`
+    b. `export mongo_pass=password`  
     Note: sample commands specifically for mac & linux systems 
 2. Mount containers: Open root project directory  
         run `docker-compose up --build`
