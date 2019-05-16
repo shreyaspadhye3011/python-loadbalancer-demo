@@ -29,7 +29,12 @@ One-time setup:
 4. Here, create database using dunp:
         In the docker container terminal from step 3,  
         run `mongorestore --db admin dump/myusers -u <username> -p <password> --authenticationDatabase admin`
-5. run `exit` to exit shell
+5. Add role and authentication to `myusers` table:  
+> run `mongo -u <username> -p <password> --authenticationDatabase admin` to enter mongo shell
+> run `use myusers` to switch to myusers database
+> run `db.createUser({ user: <username>, pwd: <password>, roles: [{ role: "readWrite", db: "myusers" }] }`
+Note: use same username that you created in ENV variables
+6. run `exit` to exit shell
 
 For every time you want to run / restart containers:
 1. Open terminal in project's root directory and run following commands 
@@ -53,6 +58,10 @@ Additionally, you can use a REST API client like Postman to `GET` request `http:
 #### Other useful commands
 > - `docker-compose ps`
 > - `mongodump --db myusers -u <username> -p <password> --authenticationDatabase admin`
+```
+use myusers
+db.createUser({ user: <username>, pwd: <password>, roles: [{ role: "readWrite", db: "myusers" }] })
+```
 
 ---
 
@@ -74,4 +83,6 @@ Additionally, you can use a REST API client like Postman to `GET` request `http:
  - Explore if it can be done through single app.ini file
  - Can add checks for DDoS and block IPs
 ```
+
+
 
