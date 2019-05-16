@@ -35,9 +35,10 @@ One-time setup:
 . use myusers  
 . db.createUser({ user: <username>, pwd: <password>, roles: [{ role: "readWrite", db: "myusers" }] }  
 ```
-Note: use same username that you created in ENV variables
+**Note:** use same username-password that you created in ENV variables
 6. run `exit` to exit docker container shell
 
+---
 For every time you want to run / restart containers:
 1. Open terminal in project's root directory and run following commands 
 2. `docker-compose build`
